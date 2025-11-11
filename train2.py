@@ -4,17 +4,17 @@ model = YOLO('yolov8m.pt')
 
 model.train(
     data='/home/zhy/wth/wth3/YOLODataset/dataset.yaml',
-    epochs=300,               # 先 200 轮
-    imgsz=1280,                 # 保持接近原分辨率，避免拉伸
+    epochs=200,
+    imgsz=640,
     batch=4,
     workers=4,
-    device=0,
+    device=1,
     optimizer='AdamW',
-    lr0=0.0003,                 # 稍微低一点
+    lr0=0.0003, 
     lrf=0.1,
     weight_decay=0.005,
     warmup_epochs=5.0,
-    patience=30,               # 早停
+    patience=30, 
     
     # 余弦退火
    #  scheduler='cosine',
